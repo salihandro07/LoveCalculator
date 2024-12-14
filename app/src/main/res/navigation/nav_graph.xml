@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/calculateFragment">
+
+    <fragment
+        android:id="@+id/calculateFragment"
+        android:name="com.example.lovecalculator.ui.fragments.CalculateFragment"
+        android:label="fragment_calculate"
+        tools:layout="@layout/fragment_calculate" >
+
+        <action
+            android:id="@+id/action_calculateFragment_to_resultFragment4"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.lovecalculator.ui.fragments.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result">
+
+        <argument
+            android:name="resultModel"
+            app:argType="com.example.lovecalculator.data.CalculateResult"/>
+        <action
+            android:id="@+id/action_resultFragment_to_calculateFragment2"
+            app:destination="@id/calculateFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_historyFragment3"
+            app:destination="@id/historyFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.lovecalculator.ui.fragments.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_calculateFragment3"
+            app:destination="@id/calculateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardFragment2"
+        android:name="com.example.lovecalculator.ui.fragments.OnBoardFragment"
+        android:label="OnBoardFragment" >
+        <action
+            android:id="@+id/action_onBoardFragment2_to_calculateFragment"
+            app:destination="@id/calculateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardPagerFragment2"
+        android:name="com.example.lovecalculator.ui.fragments.OnBoardPagerFragment"
+        android:label="OnBoardPagerFragment" />
+    <fragment
+        android:id="@+id/startFragment2"
+        android:name="com.example.lovecalculator.ui.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment2_to_onBoardFragment2"
+            app:destination="@id/onBoardFragment2" />
+    </fragment>
+
+</navigation>
